@@ -1,0 +1,159 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios12.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GPXXMLParser
+import Foundation
+@_exported import GPXXMLParser
+import Swift
+@_hasMissingDesignatedInitializers public class GPXBaseElement {
+  public var elementName: Swift.String
+  public var value: Swift.String
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXMetadata : GPXXMLParser.GPXBaseElement {
+  public func name() -> Swift.String?
+  public func desc() -> Swift.String?
+  public func keywords() -> Swift.String?
+  public func time() -> Foundation.Date?
+  public func author() -> GPXXMLParser.GPXAuthor?
+  public func copyright() -> GPXXMLParser.GPXCopyright?
+  public func extensions() -> GPXXMLParser.GPXBaseElement?
+  public func link() -> GPXXMLParser.GPXLink?
+  public func bounds() -> GPXXMLParser.GPXBounds?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXLink : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXBounds : GPXXMLParser.GPXBaseElement {
+  public var maxlat: Swift.String
+  public var maxlon: Swift.String
+  public var minlat: Swift.String
+  public var minlon: Swift.String
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXPoint : GPXXMLParser.GPXBaseElement {
+  public var lat: Swift.String
+  public var lon: Swift.String
+  public func time() -> Foundation.Date?
+  public func ele() -> Swift.String?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXWaypoint : GPXXMLParser.GPXPoint {
+  public func name() -> Swift.String?
+  public func cmt() -> Swift.String?
+  public func desc() -> Swift.String?
+  public func ageofdgpsdata() -> Swift.String?
+  public func dgpsid() -> Swift.String?
+  public func fix() -> Swift.String?
+  public func geoidHeight() -> Swift.String?
+  public func horizontalDilution() -> Swift.String?
+  public func verticalDilution() -> Swift.String?
+  public func link() -> GPXXMLParser.GPXLink?
+  public func magneticVariation() -> Swift.String?
+  public func positionDilution() -> Swift.String?
+  public func satellites() -> Swift.String?
+  public func source() -> Swift.String?
+  public func sym() -> Swift.String?
+  public func type() -> Swift.String?
+  public func extensions() -> GPXXMLParser.GPXBaseElement?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXComment : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXDescription : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXSymbol : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXType : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXText : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXName : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXEmail : GPXXMLParser.GPXBaseElement {
+  public func domain() -> Swift.String?
+  public func emailID() -> Swift.String?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXCopyright : GPXXMLParser.GPXBaseElement {
+  public func license() -> GPXXMLParser.GPXLicense?
+  public func year() -> GPXXMLParser.GPXYear?
+  public func author() -> GPXXMLParser.GPXAuthor?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXLicense : GPXXMLParser.GPXBaseElement {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXYear : GPXXMLParser.GPXBaseElement {
+  public func date() -> Foundation.NSDate?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXExtensions : GPXXMLParser.GPXBaseElement {
+  public func extensions() -> [GPXXMLParser.GPXBaseElement]?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXPerson : GPXXMLParser.GPXBaseElement {
+  public func name() -> Swift.String?
+  public func email() -> GPXXMLParser.GPXEmail?
+  public func link() -> GPXXMLParser.GPXLink?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXAuthor : GPXXMLParser.GPXPerson {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXTrack : GPXXMLParser.GPXBaseElement {
+  public var trksegments: [GPXXMLParser.GPXTrackSeg]
+  public func desc() -> Swift.String?
+  public func name() -> Swift.String?
+  public func comment() -> Swift.String?
+  public func link() -> [GPXXMLParser.GPXLink]?
+  public func source() -> GPXXMLParser.GPXBaseElement?
+  public func number() -> Swift.String?
+  public func type() -> Swift.String?
+  public func extensions() -> GPXXMLParser.GPXExtensions?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXTrackSeg : GPXXMLParser.GPXBaseElement {
+  public var trackpoints: [GPXXMLParser.GPXTrackPoint]
+  public func extensions() -> GPXXMLParser.GPXBaseElement?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXTrackPoint : GPXXMLParser.GPXWaypoint {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXRoute : GPXXMLParser.GPXBaseElement {
+  public var routepoints: [GPXXMLParser.GPXRoutePoint]
+  public func desc() -> Swift.String?
+  public func name() -> Swift.String?
+  public func comment() -> Swift.String?
+  public func source() -> GPXXMLParser.GPXBaseElement?
+  public func number() -> Swift.String?
+  public func type() -> Swift.String?
+  public func extensions() -> GPXXMLParser.GPXBaseElement?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXRoutePoint : GPXXMLParser.GPXWaypoint {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GPXPointSeg : GPXXMLParser.GPXBaseElement {
+  public var points: [GPXXMLParser.GPXPoint]
+  @objc deinit
+}
+@objc public class GPXParser : ObjectiveC.NSObject, Foundation.XMLParserDelegate {
+  public var tracks: [GPXXMLParser.GPXTrack]
+  public var routes: [GPXXMLParser.GPXRoute]
+  public var metadata: GPXXMLParser.GPXMetadata
+  public var waypoints: [GPXXMLParser.GPXWaypoint]
+  public init(url: Foundation.URL)
+  @objc public func parser(_ parser: Foundation.XMLParser, didStartElement elementName: Swift.String, namespaceURI: Swift.String?, qualifiedName qName: Swift.String?, attributes attributeDict: [Swift.String : Swift.String])
+  @objc public func parser(_ parser: Foundation.XMLParser, didEndElement elementName: Swift.String, namespaceURI: Swift.String?, qualifiedName qName: Swift.String?)
+  @objc public func parser(_ parser: Foundation.XMLParser, foundCharacters string: Swift.String)
+  @objc deinit
+  @objc override dynamic public init()
+}
